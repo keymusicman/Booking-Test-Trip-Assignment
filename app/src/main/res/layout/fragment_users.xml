@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:paddingVertical="20dp">
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single chain occurring in the past and a single chain in the future" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Multiple chains occurring in the past and the future" />
+
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mixture of chains and bookings not associated with a chain" />
+
+    <Button
+        android:id="@+id/btn_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of bookings where none of the bookings are part of a chain" />
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Empty list of bookings" />
+
+    <Button
+        android:id="@+id/btn_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not existent user" />
+</LinearLayout>

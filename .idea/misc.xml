@@ -9,6 +9,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main_screen.xml" value="0.27395833333333336" />
+        <entry key="app/src/main/res/layout/fragment_users.xml" value="0.3515850144092219" />
         <entry key="app/src/main/res/layout/trip_booking_card_item_layout.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/layout/trip_card_item_layout.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/layout/trip_leg_header_item.xml" value="0.27395833333333336" />

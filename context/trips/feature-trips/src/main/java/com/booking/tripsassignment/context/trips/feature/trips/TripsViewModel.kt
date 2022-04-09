@@ -21,6 +21,8 @@ class TripsViewModel(
     fun reload() {
         viewModelScope.launch {
             try {
+                _uiState.value = State.Loading
+
                 val data = service.getTrips(userId)
 
                 if (data.isEmpty()) {

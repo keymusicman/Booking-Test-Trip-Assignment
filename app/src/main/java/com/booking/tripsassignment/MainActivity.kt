@@ -12,8 +12,18 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.container,
-                TripsFragment.newInstance(8984747)
+                UsersFragment()
             )
+            .commit()
+    }
+
+    fun showUser(userId: Int) {
+        supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.container,
+                TripsFragment.newInstance(userId)
+            )
+            .addToBackStack(TripsFragment::class.simpleName)
             .commit()
     }
 }
