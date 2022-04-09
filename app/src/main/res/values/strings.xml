@@ -4,6 +4,9 @@
     <string name="trip_card_title">Trip to $1%s</string>
     <string name="trip_header_upcoming_trips">Upcoming trips</string>
     <string name="trip_header_past_trips">Past trips</string>
+    <string name="trip_content_empty">Unfortunately you have no trips yet.\nPlease use our application to book a trip</string>
+    <string name="loading_error">Something went wrong…</string>
+    <string name="reload">Reload</string>
 
     <plurals name="trip_card_bookings_count">
         <item quantity="zero">%d bookings</item>

@@ -1,5 +1,6 @@
 package com.booking.tripsassignment.feature.trips
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -7,14 +8,19 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 internal class TripsViewModel : ViewModel() {
+    private val service = TripsVOServiceImpl()
     private val _uiState = MutableStateFlow<State>(State.Loading)
     val uiState: StateFlow<State> = _uiState
 
     init {
+        reload()
+    }
+
+    fun reload() {
         viewModelScope.launch {
             try {
                 // TODO - inject
-                val data = TripsVOServiceImpl().getTrips()
+                val data = service.getTrips()
 
                 if (data.isEmpty()) {
                     _uiState.value = State.Empty
@@ -22,7 +28,7 @@ internal class TripsViewModel : ViewModel() {
                     _uiState.value = State.Data(data)
                 }
             } catch (e: Exception) {
-                println(e)
+                Log.w("TripsViewModel", "Failed to load data. ", e)
                 _uiState.value = State.Error
             }
         }

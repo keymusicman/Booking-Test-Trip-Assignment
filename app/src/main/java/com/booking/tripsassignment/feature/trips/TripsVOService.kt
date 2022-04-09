@@ -18,7 +18,7 @@ class TripsVOServiceImpl : TripsVOService {
     override suspend fun getTrips(): List<TripVO> = withContext(Dispatchers.IO) {
         // TODO - inject
         val allChains = BookingService(MockNetworkBookingRepository())
-            .getAllChains(48098)
+            .getAllChains(99999)
 
         val now = LocalDate.now()
         val (upcoming, past) = allChains
