@@ -12,8 +12,11 @@ internal class TripsViewModel : ViewModel() {
 internal sealed class State {
     object Loading : State()
     object Empty : State()
-    class Data(val trips: TripVO) : State()
+    class Data(val trips: List<TripVO>) : State()
     object Error : State()
 }
 
-class TripVO
+sealed class TripVO {
+    object TitleVO : TripVO()
+    class TripItemVO() : TripVO()
+}
