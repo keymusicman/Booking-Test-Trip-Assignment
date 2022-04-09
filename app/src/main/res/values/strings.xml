@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Trips</string>
+    <string name="trips_title">My bookings</string>
 </resources>
