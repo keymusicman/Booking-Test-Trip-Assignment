@@ -1,9 +1,9 @@
 package com.booking.tripsassignment.repository
 
-import com.booking.tripsassignment.data.Booker
-import com.booking.tripsassignment.data.Booking
-import com.booking.tripsassignment.data.Hotel
-import com.booking.tripsassignment.data.Price
+import com.booking.tripsassignment.domain.Booker
+import com.booking.tripsassignment.domain.Booking
+import com.booking.tripsassignment.domain.Hotel
+import com.booking.tripsassignment.domain.Price
 import org.joda.time.LocalDate
 import kotlin.random.Random
 

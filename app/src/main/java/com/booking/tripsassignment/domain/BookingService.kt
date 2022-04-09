@@ -1,6 +1,5 @@
 package com.booking.tripsassignment.domain
 
-import com.booking.tripsassignment.data.Booking
 import com.booking.tripsassignment.repository.BookingRepository
 import com.booking.tripsassignment.utils.Result
 import org.joda.time.LocalDate

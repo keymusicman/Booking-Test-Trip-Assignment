@@ -1,10 +1,9 @@
 package com.booking.tripsassignment.repository
 
 import android.os.Looper
-import com.booking.tripsassignment.data.Booking
+import com.booking.tripsassignment.domain.Booking
 import com.booking.tripsassignment.utils.NetworkError
 import com.booking.tripsassignment.utils.Result
-import java.lang.RuntimeException
 import kotlin.random.Random
 
 /**

@@ -1,6 +1,6 @@
 package com.booking.tripsassignment.repository
 
-import com.booking.tripsassignment.data.Hotel
+import com.booking.tripsassignment.domain.Hotel
 
 enum class City(val id: Int, val cityname: String) {
     ROME(1, "Rome"),
