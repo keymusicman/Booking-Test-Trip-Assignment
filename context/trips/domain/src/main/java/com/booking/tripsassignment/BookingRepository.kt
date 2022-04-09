@@ -1,7 +1,4 @@
-package com.booking.tripsassignment.domain
-
-import com.booking.tripsassignment.domain.Booking
-import com.booking.tripsassignment.utils.Result
+package com.booking.tripsassignment
 
 /**
  * An interface to represent a repository that returns a list of bookings for the given user.

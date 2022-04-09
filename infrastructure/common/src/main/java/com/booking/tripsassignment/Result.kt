@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.utils
+package com.booking.tripsassignment
 
 /**
  * A Result implementation class.
@@ -20,8 +20,8 @@ sealed class Result<out R> {
 
     fun <T> mapOnSuccess(mapper: (R) -> T): Result<T> {
         return when (this) {
-            is Success -> Result.Success(mapper(data))
-            is Error -> Result.Error(exception)
+            is Success -> Success(mapper(data))
+            is Error -> Error(exception)
         }
     }
 }

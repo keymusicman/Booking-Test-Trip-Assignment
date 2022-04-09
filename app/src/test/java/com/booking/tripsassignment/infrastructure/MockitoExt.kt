@@ -1,6 +1,7 @@
 package com.booking.tripsassignment.infrastructure
 
+import com.booking.tripsassignment.Result
 import org.mockito.stubbing.OngoingStubbing
 
-fun <T : Any?> OngoingStubbing<com.booking.tripsassignment.utils.Result<T>>.thenReturn(value: T) =
-    thenReturn(com.booking.tripsassignment.utils.Result.Success(value))
+fun <T : Any?> OngoingStubbing<Result<T>>.thenReturn(value: T) =
+    thenReturn(Result.Success(value))

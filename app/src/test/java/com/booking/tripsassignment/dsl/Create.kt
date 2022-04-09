@@ -1,8 +1,8 @@
 package com.booking.tripsassignment.dsl
 
-import com.booking.tripsassignment.domain.Booking
-import com.booking.tripsassignment.domain.Hotel
-import com.booking.tripsassignment.domain.Price
+import com.booking.tripsassignment.Booking
+import com.booking.tripsassignment.Hotel
+import com.booking.tripsassignment.Price
 import org.joda.time.LocalDate
 import java.math.BigDecimal
 

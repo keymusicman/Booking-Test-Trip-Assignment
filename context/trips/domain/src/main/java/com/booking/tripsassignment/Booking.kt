@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.domain
+package com.booking.tripsassignment
 
 import org.joda.time.LocalDate
 import java.math.BigDecimal

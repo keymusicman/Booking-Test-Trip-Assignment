@@ -1,6 +1,5 @@
-package com.booking.tripsassignment.domain
+package com.booking.tripsassignment
 
-import com.booking.tripsassignment.utils.Result
 import org.joda.time.LocalDate
 
 class BookingService(

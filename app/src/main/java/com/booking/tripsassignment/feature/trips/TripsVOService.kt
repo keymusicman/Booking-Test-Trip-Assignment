@@ -1,7 +1,7 @@
 package com.booking.tripsassignment.feature.trips
 
-import com.booking.tripsassignment.domain.Booking
-import com.booking.tripsassignment.domain.BookingService
+import com.booking.tripsassignment.Booking
+import com.booking.tripsassignment.BookingService
 import com.booking.tripsassignment.repository.MockNetworkBookingRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
