@@ -3,6 +3,8 @@ package com.booking.tripsassignment.feature.trips
 import com.booking.tripsassignment.domain.Booking
 import com.booking.tripsassignment.domain.BookingService
 import com.booking.tripsassignment.repository.MockNetworkBookingRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
 
@@ -13,12 +15,12 @@ interface TripsVOService {
 class TripsVOServiceImpl : TripsVOService {
     private val formatter = DateTimeFormat.forPattern("dd MMMM, yyyy");
 
-    override suspend fun getTrips(): List<TripVO> {
+    override suspend fun getTrips(): List<TripVO> = withContext(Dispatchers.IO) {
         // TODO - inject
         val allChains = BookingService(MockNetworkBookingRepository())
             .getAllChains(899848)
 
-        return allChains
+        allChains
             .map { chain ->
                 TripVO.TripItemVO(
                     getChainCities(chain),
