@@ -23,7 +23,7 @@ class TripsVOServiceImpl : TripsVOService {
         val now = LocalDate.now()
         val (upcoming, past) = allChains
             .partition { chain ->
-                chain.first().checkin.isAfter(now)
+                chain.last().checkout.isAfter(now)
             }
 
         val result = mutableListOf<TripVO>()
