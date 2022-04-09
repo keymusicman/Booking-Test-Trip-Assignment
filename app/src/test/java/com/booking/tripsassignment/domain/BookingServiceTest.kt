@@ -2,7 +2,6 @@ package com.booking.tripsassignment.domain
 
 import com.booking.tripsassignment.dsl.Create
 import com.booking.tripsassignment.infrastructure.thenReturn
-import com.booking.tripsassignment.repository.BookingRepository
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
