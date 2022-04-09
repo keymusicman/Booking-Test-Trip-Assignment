@@ -20,22 +20,25 @@ class TripsVOServiceImpl : TripsVOService {
 
         return allChains
             .map { chain ->
-                val startDate = getStartDate(chain)
-                val endDate = getEndDate(chain)
-
-                val dates: String =
-                    if (startDate.toDateTimeAtStartOfDay() == endDate.toDateTimeAtStartOfDay()) {
-                        startDate.toString(formatter)
-                    } else {
-                        "${startDate.toString(formatter)} - ${endDate.toString(formatter)}"
-                    }
-
                 TripVO.TripItemVO(
                     getChainCities(chain),
-                    dates,
+                    getChainDates(chain),
                     chain.size
                 )
             }
+    }
+
+    private fun getChainDates(chain: List<Booking>): String {
+        val startDate = getStartDate(chain)
+        val endDate = getEndDate(chain)
+
+        val dates: String =
+            if (startDate.toDateTimeAtStartOfDay() == endDate.toDateTimeAtStartOfDay()) {
+                startDate.toString(formatter)
+            } else {
+                "${startDate.toString(formatter)} - ${endDate.toString(formatter)}"
+            }
+        return dates
     }
 
     private fun getChainCities(chain: List<Booking>): String =
