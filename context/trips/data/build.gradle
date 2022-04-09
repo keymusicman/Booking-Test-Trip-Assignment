@@ -1,0 +1,18 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 31
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation project(':context:trips:domain')
+    implementation project(':infrastructure:common')
+    implementation project(':infrastructure:utils')
+
+    // Joda time
+    implementation 'net.danlew:android.joda:2.10.9.1'
+}

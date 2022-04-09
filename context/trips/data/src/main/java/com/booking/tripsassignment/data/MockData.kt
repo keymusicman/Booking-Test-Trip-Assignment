@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.repository
+package com.booking.tripsassignment.data
 
 import com.booking.tripsassignment.Hotel
 

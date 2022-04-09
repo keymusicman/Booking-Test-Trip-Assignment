@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/context" />
             <option value="$PROJECT_DIR$/context/trips" />
+            <option value="$PROJECT_DIR$/context/trips/data" />
             <option value="$PROJECT_DIR$/context/trips/domain" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/common" />

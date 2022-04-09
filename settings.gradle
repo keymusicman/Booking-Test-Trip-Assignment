@@ -1,5 +1,6 @@
 include ':app',
         ':context:trips:domain',
+        ':context:trips:data',
         ':infrastructure:common',
         ':infrastructure:utils'
 rootProject.name = "TripsAssignment"

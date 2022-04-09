@@ -2,7 +2,7 @@ package com.booking.tripsassignment.feature.trips
 
 import com.booking.tripsassignment.Booking
 import com.booking.tripsassignment.BookingService
-import com.booking.tripsassignment.repository.MockNetworkBookingRepository
+import com.booking.tripsassignment.data.MockNetworkBookingRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.joda.time.LocalDate
@@ -17,7 +17,7 @@ class TripsVOServiceImpl : TripsVOService {
 
     override suspend fun getTrips(): List<TripVO> = withContext(Dispatchers.IO) {
         // TODO - inject
-        val allChains = BookingService(MockNetworkBookingRepository())
+        val allChains = BookingService(com.booking.tripsassignment.data.MockNetworkBookingRepository())
             .getAllChains(99999)
 
         val now = LocalDate.now()
