@@ -23,6 +23,6 @@ class TripViewHolder(parent: ViewGroup) :
             item.numberOfBookings,
             item.numberOfBookings
         )
-        ImageLoader.loadImage(image, item.photo)
+        ImageLoader.loadImage(image, item.photo, R.drawable.ic_cross)
     }
 }
