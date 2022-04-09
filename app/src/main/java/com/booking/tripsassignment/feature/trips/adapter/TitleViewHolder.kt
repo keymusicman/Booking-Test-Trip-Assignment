@@ -10,6 +10,13 @@ class TitleViewHolder(parent: ViewGroup) :
     private val title: TextView by lazy { itemView.findViewById(R.id.trips_header) }
 
     fun bind(item: TripVO.TitleVO) {
-        title.text = item.title
+        title.text =
+            itemView.context.getString(
+                if (item.isUpcoming) {
+                    R.string.trip_header_upcoming_trips
+                } else {
+                    R.string.trip_header_past_trips
+                }
+            )
     }
 }

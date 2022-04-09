@@ -37,7 +37,7 @@ internal sealed class State {
 }
 
 sealed class TripVO {
-    class TitleVO(val title: String) : TripVO()
+    class TitleVO(val isUpcoming: Boolean) : TripVO()
     class TripItemVO(
         val chainCities: String,
         val dates: String,

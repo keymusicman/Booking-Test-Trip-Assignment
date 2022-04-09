@@ -13,22 +13,39 @@ interface TripsVOService {
 }
 
 class TripsVOServiceImpl : TripsVOService {
-    private val formatter = DateTimeFormat.forPattern("dd MMMM, yyyy");
+    private val formatter = DateTimeFormat.forPattern("dd MMMM, yyyy")
 
     override suspend fun getTrips(): List<TripVO> = withContext(Dispatchers.IO) {
         // TODO - inject
         val allChains = BookingService(MockNetworkBookingRepository())
             .getAllChains(899848)
 
-        allChains
-            .map { chain ->
-                TripVO.TripItemVO(
-                    getChainCities(chain),
-                    getChainDates(chain),
-                    chain.size
-                )
+        val now = LocalDate.now()
+        val (upcoming, past) = allChains
+            .partition { chain ->
+                chain.first().checkin.isAfter(now)
             }
+
+        val result = mutableListOf<TripVO>()
+
+        if (upcoming.isNotEmpty()) {
+            result.add(TripVO.TitleVO(true))
+            upcoming.map(::toTripVO).also(result::addAll)
+        }
+        if (past.isNotEmpty()) {
+            result.add(TripVO.TitleVO(false))
+            past.map(::toTripVO).also(result::addAll)
+        }
+
+        result
     }
+
+    private fun toTripVO(chain: List<Booking>) =
+        TripVO.TripItemVO(
+            getChainCities(chain),
+            getChainDates(chain),
+            chain.size
+        )
 
     private fun getChainDates(chain: List<Booking>): String {
         val startDate = getStartDate(chain)
