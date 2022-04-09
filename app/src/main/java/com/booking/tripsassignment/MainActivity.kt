@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.container,
-                TripsFragment.newInstance(0)
+                TripsFragment.newInstance(899848)
             )
             .commit()
     }
