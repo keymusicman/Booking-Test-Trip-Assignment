@@ -55,7 +55,7 @@
             tools:text="20 July - 28 July" />
 
         <TextView
-            android:id="@+id/nights"
+            android:id="@+id/bookings_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"

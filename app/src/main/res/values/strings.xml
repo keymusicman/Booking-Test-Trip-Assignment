@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Trips</string>
     <string name="trips_title">My bookings</string>
+    <string name="trip_card_title">Trip to $1%s</string>
+
+    <plurals name="trip_card_bookings_count">
+        <item quantity="zero">%d bookings</item>
+        <item quantity="one">%d booking</item>
+        <item quantity="many">%d bookings</item>
+    </plurals>
 </resources>

@@ -2,13 +2,15 @@ package com.booking.tripsassignment.domain
 
 import com.booking.tripsassignment.repository.BookingRepository
 import com.booking.tripsassignment.utils.Result
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.joda.time.LocalDate
 
 class BookingService(
     private val repository: BookingRepository
 ) {
-    fun getAllChains(userId: Int): List<List<Booking>> {
-        return when (val result = repository.fetchBookings(userId)) {
+    suspend fun getAllChains(userId: Int): List<List<Booking>> = withContext(Dispatchers.IO) {
+        when (val result = repository.fetchBookings(userId)) {
             is Result.Success -> result.data.toChains()
             is Result.Error -> throw result.exception
         }
