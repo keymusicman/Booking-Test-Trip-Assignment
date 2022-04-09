@@ -20,11 +20,11 @@ class MockNetworkBookingRepository : BookingRepository {
 
         Thread.sleep(Random.nextInt(10, 2000).toLong())
         if (Random.nextInt(0, 21) % 10 == 0) {
-            return Result.Error(NetworkError("API call error"))
+            return Result.Error(com.booking.tripsassignment.utils.NetworkError("API call error"))
         }
 
         val bookings = MockDataGenerator.bookingsForUser(userId)
-            ?: return Result.Error(NetworkError("API call error"))
+            ?: return Result.Error(com.booking.tripsassignment.utils.NetworkError("API call error"))
         return Result.Success(bookings)
     }
 }

@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/context/trips/domain" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/common" />
+            <option value="$PROJECT_DIR$/infrastructure/utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

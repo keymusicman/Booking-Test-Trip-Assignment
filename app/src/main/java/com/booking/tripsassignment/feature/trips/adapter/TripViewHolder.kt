@@ -23,6 +23,6 @@ class TripViewHolder(parent: ViewGroup) :
             item.numberOfBookings,
             item.numberOfBookings
         )
-        ImageLoader.loadImage(image, item.photo)
+        com.booking.tripsassignment.utils.ImageLoader.loadImage(image, item.photo)
     }
 }
