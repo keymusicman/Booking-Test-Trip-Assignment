@@ -41,6 +41,7 @@ sealed class TripVO {
     class TripItemVO(
         val chainCities: String,
         val dates: String,
-        val numberOfBookings: Int
+        val numberOfBookings: Int,
+        val photo: String
     ) : TripVO()
 }

@@ -44,7 +44,8 @@ class TripsVOServiceImpl : TripsVOService {
         TripVO.TripItemVO(
             getChainCities(chain),
             getChainDates(chain),
-            chain.size
+            chain.size,
+            chain.first().hotel.mainPhoto
         )
 
     private fun getChainDates(chain: List<Booking>): String {
