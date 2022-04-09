@@ -2,10 +2,7 @@ package com.booking.tripsassignment.context.trips.feature.trips.di
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.booking.tripsassignment.context.trips.feature.trips.TripsVOService
-import com.booking.tripsassignment.context.trips.feature.trips.TripsVOServiceImpl
-import com.booking.tripsassignment.context.trips.feature.trips.TripsViewModel
-import com.booking.tripsassignment.context.trips.feature.trips.TripsViewModelFactory
+import com.booking.tripsassignment.context.trips.feature.trips.*
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
@@ -31,6 +28,12 @@ class TripsModule {
     }
 
     @Provides
-    fun provideTripsVOService(dependencies: TripsComponentDependencies): TripsVOService =
-        TripsVOServiceImpl(dependencies.bookingService)
+    fun provideTripsVOService(
+        dependencies: TripsComponentDependencies,
+        chainDatesFormatter: ChainDatesFormatter
+    ): TripsVOService =
+        TripsVOServiceImpl(dependencies.bookingService, chainDatesFormatter)
+
+    @Provides
+    fun provideChainDatesFormatter() = ChainDatesFormatter()
 }

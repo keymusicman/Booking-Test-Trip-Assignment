@@ -5,17 +5,15 @@ import com.booking.tripsassignment.BookingService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.joda.time.LocalDate
-import org.joda.time.format.DateTimeFormat
 
 interface TripsVOService {
     suspend fun getTrips(userId: Int): List<TripVO>
 }
 
 class TripsVOServiceImpl(
-    private val bookingService: BookingService
+    private val bookingService: BookingService,
+    private val chainDatesFormatter: ChainDatesFormatter
 ) : TripsVOService {
-    private val formatter = DateTimeFormat.forPattern("dd MMMM, yyyy")
-
     override suspend fun getTrips(userId: Int): List<TripVO> = withContext(Dispatchers.IO) {
         val allChains = bookingService.getAllChains(userId)
 
@@ -42,38 +40,23 @@ class TripsVOServiceImpl(
     private fun toTripVO(chain: List<Booking>) =
         TripVO.TripItemVO(
             getChainCities(chain),
-            getChainDates(chain),
+            chainDatesFormatter.getChainDates(chain),
             chain.size,
             chain.first().hotel.mainPhoto
         )
 
-    private fun getChainDates(chain: List<Booking>): String {
-        val startDate = getStartDate(chain)
-        val endDate = getEndDate(chain)
-
-        val dates: String =
-            if (startDate.toDateTimeAtStartOfDay() == endDate.toDateTimeAtStartOfDay()) {
-                startDate.toString(formatter)
-            } else {
-                "${startDate.toString(formatter)} - ${endDate.toString(formatter)}"
-            }
-        return dates
-    }
-
-    private fun getChainCities(chain: List<Booking>): String =
-        chain.distinctBy { it.hotel.cityId }
+    private fun getChainCities(chain: List<Booking>): String {
+        val cities = chain.distinctBy { it.hotel.cityId }
+        return cities
             .map { it.hotel.cityName }
             .foldIndexed("") { index, acc, value ->
                 when (index) {
                     0 -> value
-                    chain.size - 1 -> "$acc and $value"
+                    cities.size - 1 -> "$acc and $value"
                     else -> "$acc, $value"
                 }
             }
+    }
 
-    private fun getStartDate(chain: List<Booking>): LocalDate =
-        chain.first().checkin
 
-    private fun getEndDate(chain: List<Booking>): LocalDate =
-        chain.last().checkout
 }
