@@ -1,10 +1,10 @@
-package com.booking.tripsassignment.feature.trips.adapter
+package com.booking.tripsassignment.context.trips.feature.trips.adapter
 
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.booking.tripsassignment.R
-import com.booking.tripsassignment.feature.trips.TripVO
+import com.booking.tripsassignment.context.trips.feature.trips.R
+import com.booking.tripsassignment.context.trips.feature.trips.TripVO
 import com.booking.tripsassignment.utils.ImageLoader
 
 class TripViewHolder(parent: ViewGroup) :
@@ -23,6 +23,6 @@ class TripViewHolder(parent: ViewGroup) :
             item.numberOfBookings,
             item.numberOfBookings
         )
-        com.booking.tripsassignment.utils.ImageLoader.loadImage(image, item.photo)
+        ImageLoader.loadImage(image, item.photo)
     }
 }

@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.feature.trips
+package com.booking.tripsassignment.context.trips.feature.trips
 
 import android.os.Bundle
 import android.view.View
@@ -7,8 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.booking.tripsassignment.R
-import com.booking.tripsassignment.feature.trips.adapter.TripsAdapter
+import com.booking.tripsassignment.context.trips.feature.trips.adapter.TripsAdapter
 import com.booking.tripsassignment.utils.showOnly
 import kotlinx.coroutines.flow.collect
 

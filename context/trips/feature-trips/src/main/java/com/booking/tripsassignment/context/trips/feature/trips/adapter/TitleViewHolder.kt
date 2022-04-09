@@ -1,9 +1,9 @@
-package com.booking.tripsassignment.feature.trips.adapter
+package com.booking.tripsassignment.context.trips.feature.trips.adapter
 
 import android.view.ViewGroup
 import android.widget.TextView
-import com.booking.tripsassignment.R
-import com.booking.tripsassignment.feature.trips.TripVO
+import com.booking.tripsassignment.context.trips.feature.trips.R
+import com.booking.tripsassignment.context.trips.feature.trips.TripVO
 
 class TitleViewHolder(parent: ViewGroup) :
     SelfInflatingViewHolder(parent, R.layout.trips_header_item_layout) {

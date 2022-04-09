@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.feature.trips
+package com.booking.tripsassignment.context.trips.feature.trips
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

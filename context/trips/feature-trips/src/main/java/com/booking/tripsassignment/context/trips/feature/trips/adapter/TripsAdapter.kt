@@ -1,8 +1,8 @@
-package com.booking.tripsassignment.feature.trips.adapter
+package com.booking.tripsassignment.context.trips.feature.trips.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.booking.tripsassignment.feature.trips.TripVO
+import com.booking.tripsassignment.context.trips.feature.trips.TripVO
 
 class TripsAdapter(private val items: List<TripVO>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.feature.trips.adapter
+package com.booking.tripsassignment.context.trips.feature.trips.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

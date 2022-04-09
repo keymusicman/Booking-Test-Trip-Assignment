@@ -2,7 +2,7 @@ package com.booking.tripsassignment
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.booking.tripsassignment.feature.trips.TripsFragment
+import com.booking.tripsassignment.context.trips.feature.trips.TripsFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_screen)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, TripsFragment.newInstance())
+            .replace(R.id.container, com.booking.tripsassignment.context.trips.feature.trips.TripsFragment.newInstance())
             .commit()
     }
 }
