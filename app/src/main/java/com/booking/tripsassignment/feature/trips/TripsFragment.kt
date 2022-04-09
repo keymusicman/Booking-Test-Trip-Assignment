@@ -37,4 +37,8 @@ class TripsFragment : Fragment(R.layout.trips_list_screen) {
             }
         }
     }
+
+    companion object {
+        fun newInstance() = TripsFragment()
+    }
 }
