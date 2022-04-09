@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.dsl
+package com.booking.tripsassignment.domain.dsl
 
 import java.util.*
 import kotlin.random.Random

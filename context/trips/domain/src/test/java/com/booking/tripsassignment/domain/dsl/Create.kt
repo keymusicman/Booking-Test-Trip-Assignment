@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.dsl
+package com.booking.tripsassignment.domain.dsl
 
 import com.booking.tripsassignment.Booking
 import com.booking.tripsassignment.Hotel

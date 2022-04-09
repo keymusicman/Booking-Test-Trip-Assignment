@@ -1,4 +1,4 @@
-package com.booking.tripsassignment.infrastructure
+package com.booking.tripsassignment.domain.infrastructure
 
 import com.booking.tripsassignment.Result
 import org.mockito.stubbing.OngoingStubbing
