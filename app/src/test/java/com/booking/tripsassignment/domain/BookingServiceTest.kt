@@ -57,6 +57,25 @@ class BookingServiceTest {
         assertChainBookings(chains[1], "4", "5", "6")
     }
 
+    @Test
+    fun getAllChains_whenSuccess_andThreeChains_shouldReturnThreeChains() {
+        val booking0 = Create.booking(id = "1", checkin = 1, checkout = 3)
+        val booking1 = Create.booking(id = "3", checkin = 5, checkout = 6)
+        val booking2 = Create.booking(id = "2", checkin = 3, checkout = 5)
+        val booking3 = Create.booking(id = "4", checkin = 10, checkout = 12)
+        val booking4 = Create.booking(id = "5", checkin = 14, checkout = 15)
+        whenever(repository.fetchBookings(any())).thenReturn(
+            listOf(booking2, booking1, booking3, booking0, booking4)
+        )
+
+        val chains = sut.getAllChains(0)
+
+        assertEquals(3, chains.size)
+        assertChainBookings(chains[0], "1", "2", "3")
+        assertChainBookings(chains[1], "4")
+        assertChainBookings(chains[2], "5")
+    }
+
     private fun assertChainBookings(chain: List<Booking>, vararg chainIds: String) {
         assertEquals(chainIds.size, chain.size)
         chainIds.forEachIndexed { index, id ->
