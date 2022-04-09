@@ -7,8 +7,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-internal class TripsViewModel : ViewModel() {
-    private val service = TripsVOServiceImpl()
+class TripsViewModel(
+    private val service: TripsVOService,
+    private val userId: Int
+) : ViewModel() {
     private val _uiState = MutableStateFlow<State>(State.Loading)
     val uiState: StateFlow<State> = _uiState
 
@@ -19,8 +21,7 @@ internal class TripsViewModel : ViewModel() {
     fun reload() {
         viewModelScope.launch {
             try {
-                // TODO - inject
-                val data = service.getTrips()
+                val data = service.getTrips(userId)
 
                 if (data.isEmpty()) {
                     _uiState.value = State.Empty
@@ -35,7 +36,7 @@ internal class TripsViewModel : ViewModel() {
     }
 }
 
-internal sealed class State {
+sealed class State {
     object Loading : State()
     object Empty : State()
     class Data(val trips: List<TripVO>) : State()

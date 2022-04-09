@@ -40,6 +40,7 @@ dependencies {
     implementation project(':context:trips:data')
     implementation project(':infrastructure:common')
     implementation project(':infrastructure:utils')
+    implementation project(':infrastructure:di')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'

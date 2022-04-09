@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/context/trips/feature-trips" />
             <option value="$PROJECT_DIR$/infrastructure" />
             <option value="$PROJECT_DIR$/infrastructure/common" />
+            <option value="$PROJECT_DIR$/infrastructure/di" />
             <option value="$PROJECT_DIR$/infrastructure/utils" />
           </set>
         </option>

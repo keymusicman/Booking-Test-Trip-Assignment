@@ -2,23 +2,22 @@ package com.booking.tripsassignment.context.trips.feature.trips
 
 import com.booking.tripsassignment.Booking
 import com.booking.tripsassignment.BookingService
-import com.booking.tripsassignment.data.MockNetworkBookingRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
 
 interface TripsVOService {
-    suspend fun getTrips(): List<TripVO>
+    suspend fun getTrips(userId: Int): List<TripVO>
 }
 
-class TripsVOServiceImpl : TripsVOService {
+class TripsVOServiceImpl(
+    private val bookingService: BookingService
+) : TripsVOService {
     private val formatter = DateTimeFormat.forPattern("dd MMMM, yyyy")
 
-    override suspend fun getTrips(): List<TripVO> = withContext(Dispatchers.IO) {
-        // TODO - inject
-        val allChains = BookingService(com.booking.tripsassignment.data.MockNetworkBookingRepository())
-            .getAllChains(99999)
+    override suspend fun getTrips(userId: Int): List<TripVO> = withContext(Dispatchers.IO) {
+        val allChains = bookingService.getAllChains(userId)
 
         val now = LocalDate.now()
         val (upcoming, past) = allChains

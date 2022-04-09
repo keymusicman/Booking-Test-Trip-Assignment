@@ -10,7 +10,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_screen)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, com.booking.tripsassignment.context.trips.feature.trips.TripsFragment.newInstance())
+            .replace(
+                R.id.container,
+                TripsFragment.newInstance(0)
+            )
             .commit()
     }
 }

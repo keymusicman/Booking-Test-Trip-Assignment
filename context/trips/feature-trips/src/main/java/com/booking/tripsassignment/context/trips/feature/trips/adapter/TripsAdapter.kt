@@ -11,7 +11,7 @@ class TripsAdapter(private val items: List<TripVO>) :
         return when (viewType) {
             1 -> TitleViewHolder(parent)
             2 -> TripViewHolder(parent)
-            else -> TODO()
+            else -> error("Unknown view type")
         }
     }
 
